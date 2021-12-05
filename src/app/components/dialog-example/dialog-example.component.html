@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Order Food</h1>
+<div mat-dialog-content>
+  <p>Give your credentials</p>
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Email">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Phone Number</mat-label>
+      <input matInput placeholder="Phone number">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Address</mat-label>
+      <input matInput placeholder="Address">
+    </mat-form-field>
+  </p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="true">Close</button>
+  <button mat-button (click)="doAction()" [mat-dialog-close]="true">Ok</button>
+</div>

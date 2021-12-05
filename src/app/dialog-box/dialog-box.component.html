@@ -1,0 +1,30 @@
+<h1 mat-dialog-title><strong>{{action}} item</strong></h1>
+<div mat-dialog-content>
+  <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
+    <input placeholder="{{action}} name" matInput [(ngModel)]="local_data.name">
+  </mat-form-field>
+  <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
+    <input placeholder="{{action}} restaurant" matInput [(ngModel)]="local_data.restaurant">
+  </mat-form-field>
+  <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
+    <input placeholder="{{action}} quantity" matInput [(ngModel)]="local_data.quantity">
+  </mat-form-field>
+  <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
+    <input placeholder="{{action}} distance" matInput [(ngModel)]="local_data.distance">
+  </mat-form-field>
+  <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
+    <input placeholder="{{action}} category" matInput [(ngModel)]="local_data.category">
+  </mat-form-field>
+  <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
+    <input placeholder="{{action}} logo" matInput [(ngModel)]="local_data.logo">
+  </mat-form-field>
+  <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
+    <input placeholder="{{action}} foodUrl" matInput [(ngModel)]="local_data.foodUrl">
+  </mat-form-field>
+  <ng-template #elseTemplate>
+  </ng-template>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="doAction()">{{action}}</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div>

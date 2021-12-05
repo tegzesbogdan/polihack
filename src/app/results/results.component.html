@@ -1,0 +1,51 @@
+<div class="main-container">
+
+  <div class="search-bar-container">
+    <h1>Food Rescue</h1>
+
+    <div class="search-bar">
+      <input type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+             placeholder="Search...">
+      <i class="fas fa-search"></i>
+    </div>
+  </div>
+
+  <div class="food-list-container">
+    <div class="food-list">
+      <div class="food-card" *ngFor="let item of items | filter:searchText" (click)="openDialog()">
+        <div style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url({{item.foodUrl}});
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;" class="food-card-header">
+          <div class="items-left-label">
+            <p>{{item.quantity}} left</p>
+          </div>
+          <div class="items-title-container">
+            <div style="background: url({{item.logo}}) !important;
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;" class="brand-logo"></div>
+            <p>{{item.food}}</p>
+          </div>
+        </div>
+        <div class="food-card-footer">
+          <div class="left-side">
+            <div class="flex-row-footer">
+              <i class="fas fa-clock"></i>
+              <p>{{item.hour}}</p>
+            </div>
+            <div class="flex-row-footer">
+              <i class="fas fa-map-marker-alt" style="padding-right: 4px"></i>
+              <p>{{item.distance}}</p>
+            </div>
+          </div>
+          <div class="right-side">
+            <p>{{item.price}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

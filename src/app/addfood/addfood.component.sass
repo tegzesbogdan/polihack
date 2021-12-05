@@ -1,0 +1,109 @@
+@mixin centered-flex
+  display: flex
+  justify-content: center
+  align-items: center
+
+$search-bar-bg-color: #2f3640
+
+
+.main-container
+  @include centered-flex
+  flex-direction: column
+  height: 100vh
+  width: 100vw
+  font-family: 'helvetica'
+  background-color: #FBAB7E
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)
+  box-sizing: border-box
+
+  .search-bar-container
+    @include centered-flex
+    flex-direction: column
+    width: 100%
+    height: 150px
+
+    h1
+      font-family: app-font
+      font-size: 60px
+      margin: 3rem
+      color: white
+      text-shadow: 0 5px 5px black
+
+    .search-bar
+      @include centered-flex
+      justify-content: space-between
+      width: 50%
+      height: 40%
+      color: white
+      background: rgba(255, 255, 255, 0.5)
+      border-radius: 5rem
+      font-size: 25px
+      box-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f
+
+      input
+        width: 100%
+        height: 100%
+        background: rgba(0, 0, 0, 0)
+        border-top-left-radius: 5rem
+        border-bottom-left-radius: 5rem
+        font-size: 20px
+        color: black
+        margin-left: 2rem
+        border: none
+        outline: none
+        font-family: helvetica
+
+      i
+        padding: 2rem
+
+  .food-list-container
+    @include centered-flex
+    width: 100%
+    height: calc(100vh - 200px)
+    padding: 3rem 0 0 0
+
+    .food-list
+      display: flex
+      flex-direction: column
+      padding: 1rem
+      width: 60%
+      height: 100%
+      border-radius: 8px
+      background: rgba(255, 255, 255, 0.5)
+      box-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f
+      overflow-y: scroll
+
+    .food-item
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin: 0
+      width: 100%
+      padding: 0.5rem
+      border-radius: 8px
+
+      .food-text
+        width: 80%
+
+      img
+        float: left
+        width: 50px
+        border-radius: 100% !important
+        height: 50px
+        object-fit: cover
+        box-shadow: 0 1px 2px black
+
+      p
+        margin: 0 0.5rem
+        padding: 0 0.5rem 0 0.5rem
+        display: inline
+
+      button
+        margin: 0 1rem 0 1rem
+
+    .food-item:nth-child(even)
+      background: rgba(255, 255, 255, 0.3)
+
+    .food-item:hover
+      background: rgba(0, 0, 0, 0.1)
+

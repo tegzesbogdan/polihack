@@ -1,0 +1,204 @@
+@mixin centered-flex
+  display: flex
+  justify-content: center
+  align-items: center
+
+$search-bar-bg-color: #2f3640
+$search-bar-height: 150px
+
+
+.main-container
+  @include centered-flex
+  flex-direction: column
+  height: 100vh
+  width: 100vw
+  font-family: 'helvetica'
+  background-color: #FBAB7E
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)
+
+
+  .search-bar-container
+    @include centered-flex
+    flex-direction: column
+    width: 100%
+    height: auto
+
+    h1
+      font-family: app-font
+      font-size: 60px
+      margin: 3rem
+      color: white
+      text-shadow: 0 5px 5px black
+
+    .search-bar
+      @include centered-flex
+      justify-content: space-between
+      width: 50%
+      height: 30%
+      color: white
+      background: rgba(255, 255, 255, 0.5)
+      border-radius: 5rem
+      font-size: 25px
+      box-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f
+
+      input
+        width: 100%
+        height: 100%
+        background: rgba(0, 0, 0, 0)
+        border-top-left-radius: 5rem
+        border-bottom-left-radius: 5rem
+        font-size: 20px
+        color: black
+        margin-left: 2rem
+        border: none
+        outline: none
+        font-family: helvetica
+
+      i
+        padding: 2rem
+
+
+  .food-list-container
+    @include centered-flex
+    width: 100%
+    height: calc(100vh - 150px)
+    padding: 2rem 0 2rem 0
+
+    .food-list
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+      width: 50%
+      height: 70vh
+      background: rgba(255, 255, 255, 0.5)
+      border-radius: 8px
+      box-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f
+      overflow-y: scroll
+      padding: 8px
+
+      .flex-row
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        width: 100%
+        height: 30%
+        margin-bottom: 1rem
+        padding: 1rem
+
+      .food-card
+        @include centered-flex
+        flex-direction: column
+        width: 49%
+        height: 250px
+        box-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f
+        border-radius: 8px
+        background: white
+        transition: 250ms ease-in-out
+        margin-bottom: 1rem
+
+        .food-card-header
+          height: 70%
+          width: 100%
+          background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/assets/card-image.jpg')
+          background-size: cover
+          background-repeat: no-repeat
+          background-position: center
+          border-radius: 8px 8px 0 0
+          display: flex
+          flex-direction: column
+
+          .items-left-label
+            width: 70px
+            height: fit-content
+            padding: 5px
+            background: orange
+            margin-left: 1rem
+            margin-top: 1rem
+            margin-bottom: 2rem
+            text-align: center
+            color: white
+            font-size: 20px
+            border-radius: 6px
+
+            p
+              margin: 0
+
+          .items-title-container
+            display: flex
+            align-items: center
+            width: 100%
+            padding: 1rem
+
+            .brand-logo
+              width: 60px
+              height: 60px
+              border: 1px solid gray
+              border-radius: 100%
+
+            p
+              margin: 1rem
+              font-size: 20px
+              color: white
+              font-weight: 900
+              text-shadow: 0 2px 4px black
+
+        .food-card-footer
+          height: 30%
+          width: 100%
+          background: white
+          border-radius: 0 0 8px 8px
+          display: flex
+
+          .left-side
+            display: flex
+            flex-direction: column
+            justify-content: center
+            width: 50%
+            height: 100%
+
+            .flex-row-footer
+              display: flex
+              align-items: center
+              padding: 2px
+
+              p
+                margin: 0
+                padding: 0
+                margin-left: 1rem
+                font-size: 14px
+                font-weight: 600
+
+              i
+                font-size: 16px
+                padding-left: 0.5rem
+
+          .right-side
+            display: flex
+            justify-content: flex-end
+            height: 100%
+            width: 50%
+            align-items: flex-end
+            padding-right: 0.5rem
+
+            p
+              font-size: 20px
+              color: green
+              font-weight: 900
+
+      .food-card:hover
+        cursor: pointer
+        transform: scale(1.02)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

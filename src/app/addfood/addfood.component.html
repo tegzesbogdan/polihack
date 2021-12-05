@@ -1,0 +1,22 @@
+<div class="main-container">
+  <button mat-button (click)="openDialog('Add',{})" mat-flat-button color="primary">Add Row</button>
+  <div class="food-list-container">
+    <div class="food-list">
+      <table>
+        <div class="food-item" *ngFor="let item of items">
+          <img style="display:inline" src="{{item.logo}}">
+          <div class="food-text">
+            <p>Food: {{item.food}}</p>
+            <p>Restaurant: {{item.restaurant}}</p>
+            <p>Distance: {{item.distance}}</p>
+            <p>Category: {{item.category}}</p>
+            <p>Quantity: {{item.quantity}}</p>
+          </div>
+          <a mat-flat-button (click)="openDialog('Update', item)">Edit</a>
+          <a mat-flat-button color="accent" (click)="openDialog('Delete', item)">Delete</a>
+          <!--          <button (click)="onItemClick(item.restaurant)">Info</button>-->
+        </div>
+      </table>
+    </div>
+  </div>
+</div>
